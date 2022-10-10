@@ -5,7 +5,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="notestyle.css">
-    <title>確率・統計 第2回 ノート</title>
+    <link rel="stylesheet" href="button.css">
+    <title>確率・統計 ノートまとめ</title>
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
@@ -18,294 +19,47 @@
 
 
     <div class="document">
-        <h1><span>確率・統計 第2回 ノート</span></h1>
-        <h2>リンク集</h2>
-        <div class="th" id="link">
-            <span class="th-t" style="width:10em;">
-                <h5>ページ構成(リンク)</h5>
-            </span>
-            <ul>
-                <li><a href="#second">第2回</a></li>
-            </ul>
-        </div>
+        <h1><span>確率・統計 ノートまとめ</span></h1>
+        <h2>ノートへのリンク集</h2>
 
-        <h3>確率・統計の導入</h3>
-        <div class="text">
-            <p>試行: 調査や実験</p>
-            <p>事象: 試行の結果，起こる事柄→これが起こる割合が確率</p>
-        </div>
-        <br>
-
-        <div class="text">
-            <p>＊事象について(以下は1～6までの値を例に示す)＊</p>
-            <p>全事象 $\;\Omega\;$　起こりうる全てを集めたもの　(全体)集合　$\;\{1, 2, 3, 4, 5, 6\}\;$</p>
-            <p>事象 $\;A, B\;$　試行の結果起こる事柄　$\;\Omega\;$の部分集合　$A=\{2, 4, 6\}\quad B=\{4, 5, 6\}, \quad C=\{1, 2\}$</p>
-            <p>和事象 $\;A\cup B\;$　$\;A\;$か$\;B\;$のどちらかが起こる　和集合$\;A\cup B\;$　$\;A\cup B = \{2, 4, 5, 6\}\;$</p>
-            <p>積事象 $\;A\cap B\;$　$\;A\;$と$\;B\;$の両方が起こる　積集合$\;A\cap B\;$　$\;A\cap B = \{4, 6\}\;$</p>
-            <p>余事象 $A^C$　$\;A\;$が起こらない　余集合$\;A^C\;$　$\;A^C=\{1, 3, 5\}\;$</p>
-            <p>空集合 $\;\phi\;$　絶対起こらない事象　空集合$\;\phi\;$　$\;B\cap C = \phi\;$</p>
-        </div>
-        <br>
-        <div class="text">
-            <p>$\;A\;$と$\;B\;$が互いに排反 $\;\Longleftrightarrow\; \quad A\cup B = \phi$</p>
-            <p>$A_1, \cdots ,A_n$が互いに排反 $\;\Longleftrightarrow\; \quad A_i\cup A_j = \phi\qquad (i\neq j)$</p>
-        </div>
-
-        <h3>確率の定義</h3>
-        <div class="flex">
+        <section>
+            <h3>ノート1 確率</h3>
             <div class="text">
-                <p>任意の事象$\;A\;$に対し，実数$\;P(A)\;$が定まり，以下の3つを満たすとき，$\;P(A)\;$を$\;A\;$が起こる確率という。</p>
-                <p>(P1) $\;0 \leq P(A) \leq 1\;$</p>
-                <p>(P2) $\;P(\Omega) = 1\;$</p>
-                <p>(P3) $A_1, \cdots ,\; A_n$が排反なら$\;P(\bigcup_i=1^n A_i) = \sum_i=1^n P(A_j)\;$</p>
-                <p>特に$\;A\;$と$\;B\;$が排反(注1)なら，$\;P(A\cup B) = P(A) + P(B) \;$</p>
+                <p>ノート1では，確率，条件付き確率，独立性に関する内容が書かれている。</p>
+                <p>問1～問6まで対応。</p>
+                <p>教科書: p.1～p.9</p>
             </div>
-            <div class="caption">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <p>(注1) $\;A\cap B = \phi\;$</p>
+            <p style="text-align: right; margin:20px 0 50px;"><a href="./notes/note1.html" class="btn-square-slant">→ノート1へのリンク</a></p>
+        </section>
+
+        <section>
+            <h3>ノート2 ベイズの定理，確率変数の導入</h3>
+            <div class="text">
+                <p>ノート2では，ベイズの定理，確率変数の導入に関する内容が書かれている。</p>
+                <p>問7～問10まで対応。</p>
+                <p>教科書: p.10～p.16</p>
             </div>
-        </div>
+            <p style="text-align: right; margin:20px 0 50px;"><a href="./notes/note2.html" class="btn-square-slant">→ノート2へのリンク</a></p>
+        </section>
 
-        <div class="th">
-            <span class="th-t">
-                <h5 style="width: 7em;">定理1</h5>
-            </span>
-            <p>(1) $\;P(A^C) = 1- P(A)\;$</p>
-            <p>(2) $\;P(\phi) = 0\;$</p>
-            <p>(3) $\;A\in B\;$なら$\;P(A) \leq P(B)\;$</p>
-            <p>(4) $\;P(A\cup B) = P(A) + P(B) -P(A\cup B)\;$</p>
+        <section>
+            <h3>ノート3 次回追加予定</h3>
+            <div class="text">
+                <p>ノート3では，に関する内容が書かれている。</p>
+                <p>問～問まで対応。</p>
+                <p>教科書: p.17～p.</p>
+            </div>
+            <p style="text-align: right; margin:20px 0 50px;"><a href="./notes/note3.html" class="btn-square-slant">→ノート3へのリンク</a></p>
+        </section>
+
+        <h2>ページの説明</h2>
+        <div class="text" style="width:95%;">
+            <p>このページは，信州大学における講義「確率・統計」の内容をノートにまとめたものである。</p>
+            <p>ノートの内容は，大野先生の板書及びノートを参考にしたものを中心にWebページ化したもので，それに対して筆者が一部編集や追記をしたものとなっている。</p>
+            <p>授業中の板書をWebページにするのには，授業中の時間のみだと厳しく，一部誤字脱字などの間違いが見受けられるが，ご了承いただきたい。なお，このノートは主にHTML5&CSS3及び，MathJaxによるTeXを利用して作っている。図はペンタブレットとイラストレータ用ソフトを用いて作図しているが，時間の都合上フリーハンドになったりすることがある。</p>
             <br>
-            <p>$\;\because\;$</p>
-            <p>(1) $A\cap A^C = \phi$であり，$\;A\cup A^C = \Omega\;$なので，$\;1 = P(\Omega) = P(A \cup A^C) = P(A) + P(A^C)\;$</p>
-            <p>(2) $\Omega^C = \phi$なので，$P(\phi) = P(\Omega^C) = 1 - P(\Omega) = 0$</p>
-            <p>(3) $B = (A \cap B) \cup (A^C \cap B)$である。また，$A\in B$より，$A\cap B = A$なので，$P(B) = P(A\cap B) + P(A^C \cap B) = P(A) + P(A^C \cap B) \geq P(A)$</p>
-            <p>(4) $B = (A \cap B) \cup (A^C \cap B)$より，$P(B) = P(A \cap B) + P(A^C \cap B)$</p>
-            <p>　$A\cup B = A \cup (A^C \cap B)$より，$P(A \cup B) = P(A) + P(A^C \cap B) = P(A) + P(B) - P(A\cap B)$</p>
+            <p>大野先生のホームページ: <br><a href="http://www.shinshu-u.ac.jp/faculty/engineering/appl/2017/math/ohno/note/note.htm">http://www.shinshu-u.ac.jp/faculty/engineering/appl/2017/math/ohno/note/note.htm</a></p>
         </div>
-
-        <h3>条件付き確率と独立性</h3>
-        <div class="text">
-            <p>定義 $P(A)\neq 0$とするとき，$\displaystyle P(B|A) = \frac{P(A\cap B)}{P(A)}\;$を$\;A\;$が起こったときに$\;B\;$が起こる<em>条件付き確率</em>という。</p>
-            <p>$$P(A\cap B) + P(A\cap B^C) = P(A)$$</p>
-        </div>
-
-
-        <div class="th">
-            <span class="th-t">
-                <h5 style="width: 7em;">定理2</h5>
-            </span>
-            <p>$P(A) \neq 0$のとき，$\;P(A\cap B) = P(B|A) \; P(A)\;$</p>
-        </div>
-
-        <div class="def">
-            <span class="def-t">
-                <h4 style="width: 7em;">定義</h5>
-            </span>
-            <p>$P(A\cap B) = P(A) \cdot P(B)$を満たすとき，$\;A\;$と$\;B\;$は互いに独立という。</p>
-        </div>
-
-        <div class="th">
-            <span class="th-t">
-                <h5 style="width: 7em;">定理3</h5>
-            </span>
-            <p>$P(A), P(B) \neq 0$とすると，次の3つは同値</p>
-            <p>(1) $\;A\;$と$\;B\;$は独立</p>
-            <p>(2) $P(B|A) = P(B)$ (←$\;P(B|A^C)\;$)</p>
-            <p>(3) $P(A|B) = P(A)$</p>
-        </div>
-
-        <div class="text">
-            <p>$\because$</p>
-            <p>定理2 $\;P(A\cap B) = P(B|A) \cdot P(A)\;$ ―☆</p>
-            <p>(1)→(2) (1)より$\;P(A\cap B) = P(B) \cdot P(A) \quad \therefore P(B|A) = P(B)\;$</p>
-            <p>(2)→(1) ☆に$P(B|A) = P(B)$を代入すれば，$P(A\cap B) = P(A) \cdot P(B)$</p>
-        </div>
-
-        <div class="text">
-            <p>くじ: 10本，あたり: 3本　甲，乙の順に引く</p>
-            <p>A: 甲があたる　　(1) くじ戻す</p>
-            <p>B: 乙があたる　　(2) くじ戻さない</p>
-            <p>AとBは独立か</p>
-        </div>
-
-        <div class="text">
-            <p>(1) $P(A) = \frac{3}{10}, P(B) = \frac{3}{10}$</p>
-            <p>$\;P(A\cap B) = \frac{9}{100}\;$</p>
-            <p>$\therefore A$と$\;B\;$は独立</p>
-            <br>
-            <p>(2) $P(A)=\frac{3}{10}\; P(B) = \frac{3}{10}\cdot \frac{2}{9} + \frac{7}{10} \cdot \frac{3}{9} = \frac{3}{10}$</p>
-            <p>$P(A\cap B) = \frac{6}{90} = \frac{1}{15}$　$\therefore$独立でない。</p>
-        </div>
-
-        <div class="text">
-            <p>問4 赤15個，白10個の計25個</p>
-            <p>甲と乙が順に引き戻さない。</p>
-            <p>A: 甲が赤，B: 乙が白</p>
-            <p>$P(A), P(B), P(B|A), P(A|B)$を求めよ。</p>
-            <br>
-            <p>解答: </p>
-            <p>$$P(A) = \frac{15}{25} = \frac{3}{5}$$</p>
-            <p>$$P(B) = \frac{15}{25} \times \frac{10}{24} + \frac{10}{25} \times \frac{9}{24} = \frac{2}{5}$$</p>
-            <p>$$P(A\cap B) = \frac{15}{25} \times \frac{10}{24} = \frac{1}{4}$$</p>
-            <p>$$P(B|A) = \frac{\frac{1}{4}}{\frac{3}{5}} = \frac{5}{12}$$</p>
-            <p>$$P(A|B) = \frac{\frac{1}{4}}{\frac{2}{5}} = \frac{5}{8}$$</p>
-        </div>
-
-        <h1 style="second"><span>第2回</span></h1>
-        <h3>前回の復習</h3>
-        <div class="text">
-            <p>事象 $\;A, B\;$　$\;A\cap B = \phi\;$←排反</p>
-            <p>$\;P(A\cap B) = P(A) P(B)\;$　$\;P(A|B) = \displaystyle \frac{P(A\cap B)}{P(B)}\;$</p>
-            <p>$\;P(A) = P(A|B)\;$</p>
-            <p>1つ上の式と似ていて，$\;P(B) \cdot P(A|B) = P(A\cap B)\;$</p>
-        </div>
-
-        <h3>ベイズの定理</h3>
-
-        <div class="th">
-            <span class="th-t">
-                <h5 style="width: 8em;">定理4</h5>
-            </span>
-            <p>$\;A_1, \cdots , A_n\;$は排反で，$\;B \subset A_1\cup A_2 \cup \cdots \cup A_n\;$とする。</p>
-            <p>このとき，$$P(B) = \sum_{i=1}^n P(A_i) \cdot P(B|A_i)$$</p>
-        </div>
-        <div class="text">
-            <p>$\;\because\;$ $$B= \bigcup_{i=1}^n (B\cap A_i)$$と排反な分割ができるので，$\therefore$ $$P(B) = \sum_{i=1}^n P(B\cap A_i) = \sum_{i=1}^n P(A_i) \cdot P(B|A_i)$$</p>
-
-        </div>
-
-        <div class="th">
-            <span class="th-t">
-                <h5 style="width: 8em;">定理5</h5>
-            </span>
-            <p>$\;A_1,\cdots , A_n \;$は排反で，$\;B\subset A_1 \cup \cdots \cup A_n\;$とする。</p>
-            <p>このとき，$\;1\leq \forall k \leq n\;$に対し，$$P(A_k|B) = \frac{P(A_k) P(B|A_k)}{\displaystyle \sum_{i=1}^n P(A_i) P(B|A_i)}$$が成立。</p>
-        </div>
-
-        <div class="text">
-            <p>$\because$ $$P(A_k\cap B) = P(B) \cdot P(A_k|B)$$より，$$P(A_k|B) = \frac{P(A_k) P(B|A_k)}{P(B)}$$</p>
-        </div>
-
-        <h3>例題4(p11)</h3>
-        <div class="text">
-            <p style="text-indent: 0;">事象A($A_1$): 取り出した部品がA社のもの <br>事象B($A_2$): 取り出した部品がB社のもの <br>事象C($A_3$): 取り出した部品がC社のもの <br>事象D($B$): 取り出した部品が不良品</p>
-            <p>求めるものは，$\;P(A|D)\;$である。</p>
-
-            <p>$$\begin{eqnarray*}P(A|D) &=& \frac{P(A)P(D|A)}{P(A)\cdot P(D|A) + P(B)\cdot P(D|B) + P(C)\cdot P(D|C)} \\ &=& \frac{P(A)P(D|A)}{0.2\times 0.04 + 0.3\times0.03 + 0.5\times0.01} = \frac{4}{11}\end{eqnarray*}$$</p>
-            <img src="./images/image2-1.png" width="80%">
-
-        </div>
-
-        <h3>問8</h3>
-        <div class="text">
-            <p>$$P(C|D) = \frac{P(C)\cdot P(D|C)}{P(A)\cdot P(D|A) + P(B) \cdot P(D|B) + P(C)\cdot P(D|C)} = \frac{8}{6+9+8} = \frac{8}{23}$$</p>
-        </div>
-        <br>
-
-        <h2>確率分布</h2>
-        <div class="def">
-            <span class="def-t">
-                <h4 style="width: 7em;">定義</h5>
-            </span>
-            <p>試行の結果，値の定まる量$\;X\;$を考える。</p>
-            <p>$$\forall a, b \in \mathbb{R} \quad (a\lt b)$$に対して， $$P(X=a), \; P(a\leq X \leq b),\; P(X\lt a)$$が定まるとき，$\;X\;$を<em>確率変数</em>という。</p>
-        </div>
-
-        <div class="text">
-            <h4>離散型</h4>
-            <p>さいころ投げで，出る目の値を$\;X\;$とすると，$\;X\;$の取りうる値は$\;1, 2, 3, 4, 5, 6\;$の6つである。</p>
-            <p>このように，とびとびの値を取る確率変数を<em>離散型</em>という。</p>
-        </div>
-
-        <div class="text">
-            <p>$\;X\;$が離散型のとき，取りうる値を$\;x_1, x_2, \cdot , x_n\; \qquad (x_1\lt x_2\lt \cdots \lt x_n)$とし，$p_i = P(X=x_i)\;$とする。</p>
-            <p>このとき，$\;0\leq p_i \leq 1, \sum_{i=1}^n p_i = 1\;$を満たす。</p>
-            <p>また，この対応を表にした，</p>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>$X$</td>
-                        <td>$x_1$</td>
-                        <td>$x_2$</td>
-                        <td>$\cdots$</td>
-                        <td>$x_n$</td>
-                    </tr>
-                    <tr>
-                        <td style="width:4em;">確率</td>
-                        <td>$p_1$</td>
-                        <td>$p_2$</td>
-                        <td>$\cdots$</td>
-                        <td>$p_n$</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="text-indent: 0;">を<em>確率分布表</em>という。</p>
-            <p>また，その対応を<em>確率分布</em>という。
-            </p>
-            <p>さらに，$\;F(x) = P(X \leq x)\;$を$\;X\;$の<em>分布関数</em>という。</p>
-            <p>分布関数は，$$p_1=F(x_1), p_i=F(x_i) - F(x_{i-1}),\; \lim_{x\to \infty} F(x)=0, \; \lim_{x\to \infty} F(x) = 1$$を満たす。</p>
-
-        </div>
-
-        <h3>例5</h3>
-        <div class="text">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>$X$</td>
-                        <td>$0$</td>
-                        <td>$1$</td>
-                        <td>$2$</td>
-                    </tr>
-                    <tr>
-                        <td style="width:3em;">確率</td>
-                        <td>$\displaystyle \frac{1}{4}$</td>
-                        <td>$\displaystyle \frac{1}{2}$</td>
-                        <td>$\displaystyle \frac{1}{4}$</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>が確率分布表</p>
-            <p>$$F(6) = P(X\leq 6) = 1,\qquad F\left(\frac{3}{2}\right) = P\left(X\leq \frac{3}{2}\right) = \frac{3}{4}$$</p>
-            <p>$$F(-1) = P(X\leq -1) = 0$$</p>
-            <p>$x\lt 0\;$のとき，$\;F(x) = P(X\leq x) = 0\;$</p>
-            <p>$\displaystyle 0\leq x\lt 1\;$のとき，$\displaystyle\;F(x) = P(X\leq x) = P(X=0) = \frac{1}{4}\;$</p>
-            <p>$\displaystyle 1\leq x\lt 2\;$のとき，$\displaystyle\;F(x) = P(X\leq x) = P(X=0, 1) = \frac{3}{4}\;$</p>
-            <p>$2\leq x\;$のとき，$\;F(x)=P(X\leq x) = P(X=0, 1, 2) = 1\;$</p>
-        </div>
-
-        <h3>問10</h3>
-        <div class="text">
-            <p style="text-indent: 0;">(1) </p>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>$X$</td>
-                        <td>$-3$</td>
-                        <td>$0$</td>
-                        <td>$3$</td>
-                        <td>$6$</td>
-                    </tr>
-                    <tr>
-                        <td style="width:3em;">確率</td>
-                        <td>$\displaystyle \frac{1}{8}$</td>
-                        <td>$\displaystyle \frac{3}{8}$</td>
-                        <td>$\displaystyle \frac{3}{8}$</td>
-                        <td>$\displaystyle \frac{1}{8}$</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <img src="./images/image2-2.png" width="60%" style="margin-top:20px;">
-
-
 
         <br><br><br><br>
     </div>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)file:///C:/Users/ISE/Desktop/shindai%20programming%20language%20I%20homework%203-2.html -->
+<html lang="ja">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../notestyle.css">
+    <link rel="stylesheet" href="../button.css">
+    <title>確率・統計 ノート2</title>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" }}, tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\"] ], processEscapes: true }, "HTML-CSS": { matchFontHeight: false }, displayAlign: "left", displayIndent: "4em" });
+    </script>
+</head>
+
+<body>
+
+
+    <div class="document" id="top">
+        <h1><span>確率・統計 ノート2</span></h1>
+        <h2>リンク集</h2>
+        <div class="th" id="link">
+            <span class="th-t" style="width:10em;">
+                <h5>ページ構成(リンク)</h5>
+            </span>
+            <ul>
+                <li><a href="#beizu">ベイズの定理</a></li>
+                <li><a href="#ensyu1">問題演習1</a></li>
+                <li><a href="#kakuritsu_hensuu">確率変数と確率分布</a></li>
+            </ul>
+        </div>
+
+        <h3>前回の復習</h3>
+        <div class="text ">
+            <p>事象 $\;A, B\;$　$\;A\cap B = \phi\;$←排反</p>
+            <p>$\;P(A\cap B) = P(A) P(B)\;$　$\;P(A|B) = \displaystyle \frac{P(A\cap B)}{P(B)}\;$</p>
+            <p>$\;P(A) = P(A|B)\;$</p>
+            <p>$\;P(B) \cdot P(A|B) = P(A\cap B)\;$</p>
+        </div>
+
+        <h3 id="beizu">ベイズの定理</h3>
+
+        <div class="th ">
+            <span class="th-t ">
+                <h5>定理4</h5>
+            </span>
+            <p>$\;A_1, \cdots , A_n\;$は排反で，$\;B \subset A_1\cup A_2 \cup \cdots \cup A_n\;$とする。</p>
+            <p>このとき，$$P(B) = \sum_{i=1}^n P(A_i) \; P(B|A_i)$$</p>
+        </div>
+
+        <div class="flex">
+            <div class="text ">
+                <p>$\;\because\;$ $$B= \bigcup_{i=1}^n (B\cap A_i)$$と排反な分割ができるので，<br>　$\therefore$ $$P(B) = \sum_{i=1}^n P(B\cap A_i) = \sum_{i=1}^n P(A_i) \; P(B|A_i)$$</p>
+            </div>
+            <div class="caption">
+                <br><br><br>
+                <br><br><br>
+                <br>
+                <p>定理2より</p>
+            </div>
+        </div>
+
+        <div class="th ">
+            <span class="th-t ">
+                <h5>定理5 (ベイズの定理)</h5>
+            </span>
+            <p>$\;A_1,\cdots , A_n \;$は排反で，$\;B\subset A_1 \cup \cdots \cup A_n\;$とする。</p>
+            <p>このとき，$\;1\leq \,^\forall k \leq n\;$に対し，$$P(A_k|B) = \frac{P(A_k) P(B|A_k)}{\displaystyle \sum_{i=1}^n P(A_i) P(B|A_i)}$$が成立。</p>
+        </div>
+
+        <div class="flex">
+            <div class="text ">
+                <p>$\because$ $$P(A_k\cap B) = P(B) \; P(A_k|B)$$より，$$P(A_k|B) = \frac{P(A_k) P(B|A_k)}{P(B)} = \frac{P(A_k) P(B|A_k)}{\displaystyle \sum_{i=1}^n P(A_i) P(B|A_i)}$$</p>
+            </div>
+            <div class="caption">
+                <br><br><br>
+                <br><br>
+                <p>定理4より<br>$P(B) = \sum_{i=1}^n P(A_i) \; P(B|A_i)$</p>
+            </div>
+        </div>
+
+        <p style="text-align:right;">→教科書 問8～問9</p>
+        <p style="text-align:right;"><a href="#top" class="btn-square-slant ">↑トップに戻る</a></p>
+
+        <h3 id="ensyu1">問題演習</h3>
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>例題4(p.11) 解答</h5>
+            </span>
+            <p style="text-indent: 0; ">事象A($A_1$): 取り出した部品がA社のもの <br>事象B($A_2$): 取り出した部品がB社のもの <br>事象C($A_3$): 取り出した部品がC社のもの <br>事象D($B$): 取り出した部品が不良品</p>
+            <p>求めるものは，$\;P(A|D)\;$である。</p>
+
+            <p>$$\begin{eqnarray*}P(A|D) &=& \frac{P(A)P(D|A)}{P(A)\cdot P(D|A) + P(B)\cdot P(D|B) + P(C)\cdot P(D|C)} \\ &=& \frac{P(A)P(D|A)}{0.2\times 0.04 + 0.3\times0.03 + 0.5\times0.01} = \frac{4}{11}\end{eqnarray*}$$</p>
+            <img src="./images/image2-1.png " width="40% ">
+        </div>
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>問8 (p.12) 解答</h5>
+            </span>
+            <p>$$P(C|D) = \frac{P(C)\cdot P(D|C)}{P(A)\cdot P(D|A) + P(B) \cdot P(D|B) + P(C)\cdot P(D|C)} = \frac{8}{6+9+8} = \frac{8}{23}$$</p>
+        </div>
+        <p style="text-align:right;"><a href="#top" class="btn-square-slant ">↑トップに戻る</a></p>
+
+        <br>
+
+        <h2>確率分布</h2>
+        <h3 id="kakuritsu_hensuu">確率変数と確率分布</h3>
+        <div class="def ">
+            <span class="def-t ">
+                <h4>定義</h5>
+            </span>
+            <p>試行の結果，値の定まる量$\;X\;$を考える。</p>
+            <p>$$\forall a, b \in \mathbb{R} \quad (a\lt b)$$に対して， $$P(X=a), \; P(a\leq X \leq b),\; P(X\lt a)$$が定まるとき，$\;X\;$を<em>確率変数</em>という。</p>
+        </div>
+
+        <h4>離散型</h4>
+        <div class="text ">
+            <p>さいころ投げで，出る目の値を$\;X\;$とすると，$\;X\;$の取りうる値は$\;1, 2, 3, 4, 5, 6\;$の6つである。</p>
+            <p>このように，とびとびの値を取る確率変数を<em>離散型</em>という。</p>
+        </div>
+
+        <div class="text ">
+            <p>$\;X\;$が離散型のとき，取りうる値を$\;x_1, x_2, \cdots , x_n\; \qquad (x_1\lt x_2\lt \cdots \lt x_n)$とし，$p_i = P(X=x_i)\;$とする。</p>
+            <p>このとき，$\displaystyle \;0\leq p_i \leq 1,\; \sum_{i=1}^n p_i = 1\;$を満たす。</p>
+            <p>また，この対応を表にした，</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>$X$</td>
+                        <td>$x_1$</td>
+                        <td>$x_2$</td>
+                        <td>$\cdots$</td>
+                        <td>$x_n$</td>
+                    </tr>
+                    <tr>
+                        <td style="width:4em; ">確率</td>
+                        <td>$p_1$</td>
+                        <td>$p_2$</td>
+                        <td>$\cdots$</td>
+                        <td>$p_n$</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-indent: 0; ">を<em>確率分布表</em>という。</p>
+            <p>また，その対応を<em>確率分布</em>という。
+            </p>
+            <p>さらに，$\;F(x) = P(X \leq x)\;$を$\;X\;$の<em>分布関数</em>という。</p>
+            <p>分布関数は，$$p_1=F(x_1), p_i=F(x_i) - F(x_{i-1}),\; \\\lim_{x\to \infty} F(x)=0, \; \lim_{x\to \infty} F(x) = 1$$を満たす。</p>
+
+        </div>
+
+        <p style="text-align:right;">→教科書 問10</p>
+        <p style="text-align:right;"><a href="#top" class="btn-square-slant ">↑トップに戻る</a></p>
+
+        <h3>問題演習</h3>
+        <div class="ans">
+            <span class="ans-t">
+                <h5>例題5 (p.15) 解答</h5>
+            </span>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>$X$</td>
+                        <td>$0$</td>
+                        <td>$1$</td>
+                        <td>$2$</td>
+                    </tr>
+                    <tr>
+                        <td style="width:3em; ">確率</td>
+                        <td>$\displaystyle \frac{1}{4}$</td>
+                        <td>$\displaystyle \frac{1}{2}$</td>
+                        <td>$\displaystyle \frac{1}{4}$</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>が確率分布表</p>
+            <p>$$F(6) = P(X\leq 6) = 1,\qquad F\left(\frac{3}{2}\right) = P\left(X\leq \frac{3}{2}\right) = \frac{3}{4}$$</p>
+            <p>$$F(-1) = P(X\leq -1) = 0$$</p>
+            <p>$x\lt 0\;$のとき，$\;F(x) = P(X\leq x) = 0\;$</p>
+            <p>$\displaystyle 0\leq x\lt 1\;$のとき，$\displaystyle\;F(x) = P(X\leq x) = P(X=0) = \frac{1}{4}\;$</p>
+            <p>$\displaystyle 1\leq x\lt 2\;$のとき，$\displaystyle\;F(x) = P(X\leq x) = P(X=0, 1) = \frac{3}{4}\;$</p>
+            <p>$2\leq x\;$のとき，$\;F(x)=P(X\leq x) = P(X=0, 1, 2) = 1\;$</p>
+        </div>
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>問10 (p.16) 解答</h5>
+            </span>
+            <p style="text-indent: 0; ">(1) </p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>$X$</td>
+                        <td>$-3$</td>
+                        <td>$0$</td>
+                        <td>$3$</td>
+                        <td>$6$</td>
+                    </tr>
+                    <tr>
+                        <td style="width:3em; ">確率</td>
+                        <td>$\displaystyle \frac{1}{8}$</td>
+                        <td>$\displaystyle \frac{3}{8}$</td>
+                        <td>$\displaystyle \frac{3}{8}$</td>
+                        <td>$\displaystyle \frac{1}{8}$</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="./images/image2-2.png " width="60% " style="margin-top:20px; ">
+        </div>
+        <p style="text-align:right;"><a href="#top" class="btn-square-slant ">↑トップに戻る</a></p>
+
+
+
+        <div class="flex">
+            <p style="width:33%;"><a href="./note1.html " class="btn-square-slant ">←前のページに戻る</a></p>
+            <p style="width:33%;"><a href="../index.html " class="btn-square-slant ">トップページに戻る</a></p>
+            <p style="width:33%;"><a href="./note3.html " class="btn-square-slant ">次のページに移る→</a></p>
+        </div>
+
+        <br><br><br><br>
+    </div>
+
+
+
+</body>
+
+</html>}
