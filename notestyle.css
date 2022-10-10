@@ -28,7 +28,10 @@ h1 {
     margin: auto auto 20px;
     width: 50%;
     padding: 0.5em;
+    background-repeat: repeat;
+    background-position: center top;
     background-color: #14da2e;
+    background-image: url("./pattern8.jpg");
     display: block;
     border: 10px outset #0000FF;
     color: #6600FF;
