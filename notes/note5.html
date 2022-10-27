@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)file:///C:/Users/ISE/Desktop/shindai%20programming%20language%20I%20homework%203-2.html -->
+<html lang="ja">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../notestyle.css">
+    <link rel="stylesheet" href="../button.css">
+    <title>確率・統計 ノート5</title>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" }}, tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\"] ], processEscapes: true }, "HTML-CSS": { matchFontHeight: false }, displayAlign: "left", displayIndent: "4em" });
+    </script>
+</head>
+
+<body>
+
+
+    <div class="document" id="top">
+        <h1><span>確率・統計 ノート5</span></h1>
+        <h2>リンク集</h2>
+        <div class="th" id="link">
+            <span class="th-t" style="width:10em;">
+                <h5>ページ構成(リンク)</h5>
+            </span>
+            <ul>
+                <li>
+                    <a href="#poason">ポアソン分布</a>
+                </li>
+                <li>
+                    <a href="#seiki">正規分布</a>
+                </li>
+            </ul>
+        </div>
+
+        <h3 id="poason">ポアソン分布</h3>
+        <div class="def ">
+            <span class="def-t ">
+                <h4>ポアソン分布</h4>
+            </span>
+            <p>$$P(X = i) = e^{-\lambda} \cdot \frac{\lambda^\lambda}{i!} \qquad (i = 0,1,2,\cdots)$$</p>
+            <p>$$\lim_{n\to \infty } \;_n\!C_i p^i(1-p)^{n-i} = e^{-\lambda} \cdot \frac{\lambda^\lambda}{i!}$$</p>
+        </div>
+
+        <div class="text ">
+            <p><u>例</u>　1時間あたり電話が平均で$\;\lambda\;$回かかってくるとする。</p>
+            <p>ある1時間でかかってくる電話の回数$\;X\;$の確率分布は?</p>
+            <br>
+            <p>$\;B\left(n,\; \frac{\lambda}{n}\right)\;$となるから，これを無限大に発散して考えたとき，ポアソン分布となる。</p>
+            <p>$$P(X = i) = e^{-\lambda} \cdot \frac{\lambda^i}{i!}$$</p>
+        </div>
+
+        <div class="text">
+            <p><u><em>二項分布のポアソン近似</em></u></p>
+            <p>$\;X\;$が二項分布$\;B(n,\;p)\;$に従うとき，$\;n\;$が十分に大きければ，また$\;p\;$が小さければ，$\;X\;$はパラメータ$\;np\;$のポアソン分布に従うとしてよい。</p>
+        </div>
+
+        <div class="def ">
+            <span class="def-t ">
+                <h4>例題10</h4>
+            </span>
+            <p>ある工場で生産される部品の不良率は1%である。この工場で生産された部品の中から無作為に200個選んで箱詰めしたとき，その箱の中に不良品が3個以上含まれる確率を二項分布のポアソン近似を用いて求めよ。</p>
+        </div>
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>解答</h5>
+            </span>
+            <p><u><em>二項分布のポアソン近似</em></u></p>
+            <p>$\;X\;$が二項分布$\;B(n,\;p)\;$に従うとき，$\;n\;$が十分に大きければ，また$\;p\;$が小さければ，$\;X\;$はパラメータ$\;np\;$のポアソン分布に従うとしてよい。</p>
+            <p>$\;X\;$は$\;B\left(200, \frac{1}{100}\right)\;$に従う。$$\therefore np=2$$</p>
+            <p>$\;X\;$はほぼパラメータ2のポアソン分布。</p>
+            <p>0個: $\displaystyle\;_{200}C_0 \left(\frac{1}{100}\right)^0 \left(\frac{99}{100}\right)^{200}\; = P(X=0) = e^{-2}\cdot \frac{2^0}{0!} = e^{-2}$</p>
+            <p>1個: $\displaystyle\;_{200}C_1 \left(\frac{1}{100}\right)^1 \left(\frac{99}{100}\right)^{199}\; = P(X=1) = e^{-2}\cdot \frac{2^1}{1!} = 2e^{-2}$</p>
+            <p>2個: $\displaystyle\;_{200}C_2 \left(\frac{1}{100}\right)^2 \left(\frac{99}{100}\right)^{198}\; = P(X=2) = e^{-2}\cdot \frac{2^2}{2!} = 2e^{-2}$</p>
+            <p>$$P(X\geq 3) = 1- P(X=0,1,2) = 1-5e^{-2}$$</p>
+
+
+        </div>
+
+        <div class="def ">
+            <span class="def-t ">
+                <h4>問15</h4>
+            </span>
+            <p>1日の降水量が100mm以上となる日数が6年間で1日のとき，来年1年間に降水量が100mm以上の日数が次のようになる確率を二項分布のポアソン近似を用いて求めよ。</p>
+            <p>(1) 0日　　(2) 2日以上</p>
+        </div>
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>解答</h5>
+            </span>
+            <p>$\;X\;$を1年で100mm以上の雨が降る日数とすると，$\;X\;$は$\;B\left(365, \; \frac{1}{6\times 365}\right)\;$に従う。</p>
+            <p>$$np = 365\times \frac{1}{365\times 6} = \frac{1}{6}$$</p>
+            <p>$$P(X=0) = e^{-\frac{1}{6}} \cdot \frac{\left(\frac{1}{6}\right)^0}{0!} = e^{-\frac{1}{6}}$$</p>
+        </div>
+
+        <p style="text-align:right;"><a href="#top" class="btn-square-slant ">↑トップに戻る</a></p>
+
+        <h3 id="seiki">正規分布</h3>
+        <div class="flex">
+            <div class="text">
+                <p><u>正規分布</u>　連続型確率変数$\;X\;$の確率密度関数</p>
+                <p>$$p(x) = \frac{1}{\sqrt{2\pi}\cdot \sigma} \cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$であるとき，$\;X\;$は<em>正規分布$\;N(\mu,\; \sigma^2)\;$に従う</em>という。<br>ただし，$\;\sigma \gt 0, \; \mu \in \mathbb{R}\;$である。</p>
+                <p>特に，$\;\mu = 0,\; \sigma = 1\;$のとき，<em>標準正規分布</em>という。</p>
+                <p>このとき，$$p(x) = \frac{1}{\sqrt{2\pi}} \cdot e^{\frac{x^2}{2}}$$</p>
+            </div>
+            <div class="caption">
+                <p>正規分布のグラフ</p>
+                <img src="./images/image5-1.png" width="100%">
+                <p>Wikipediaより</p>
+            </div>
+        </div>
+
+        <div class="th">
+            <span class="th-t ">
+                <h5>定理10</h5>
+            </span>
+            <p>$\;X\;$が$\;N(\mu,\; \sigma^2)\;$に従うとき，$\;E(X)= \mu,\; V(X) = \sigma^2\;$である。</p>
+        </div>
+
+
+        <div class="text">
+            <p><u>標準化</u>　$\;X\;$が$\;N(\mu, \sigma^2)\;$にしたがうとき，この標準化$\;\displaystyle Z= \frac{X-\mu}{\sigma}\;$を考える。</p>
+            <p>$\;E(Z) = 0,\; V(X) = 1\;$</p>
+            <p>$$\int_0^x \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}}dt$$</p>
+            <p>$$P(a\leq X \leq b) = \int_a^b p(x) dx$$</p>
+            <p>$$\begin{align*}P(a\leq Z \leq b) &= P(a \leq \frac{x-\mu}{\sigma} \leq b) \\ &= P(a\sigma + \mu\leq X \leq b\sigma + \mu) \\ &=\int_{a\sigma + \mu}^{b\sigma + \mu} \frac{1}{\sqrt{2\pi}\cdot \sigma} \exp\left(-\frac{(x-\mu )^2}{2\sigma^2}
+                \right) dx \\ &= \int_a^b \frac{1}{\sqrt{2\pi} } \exp\left(-\frac{z^2}{2}\right)dz\end{align*}$$となる。</p>
+            <p>$\;\therefore Z\;$は$\;N(0, 1)\;$に従う。</p>
+        </div>
+
+        <div class="text">
+            <p><u>正規分布表</u>$$\phi(z) = \int_0^z \frac{1}{\sqrt{2\pi }} e^{-\frac{x^2}{2}} dx$$とする。</p>
+            <p>$\;z\to \phi(z)\;$を求めるのが正規分布表I</p>
+            <p>$\;\phi(z)\to z\;$を求めるのが正規分布表II</p>
+            <p><u>例</u> $\;\phi(1.76) = 0.4608\;$</p>
+        </div>
+
+
+
+
+        <p style="text-align:right;"><a href="#top" class="btn-square-slant ">↑トップに戻る</a></p>
+
+
+
+        <div class="flex">
+            <p style="width:33%;"><a href="./note4.html " class="btn-square-slant ">←前のページに戻る</a></p>
+            <p style="width:33%;"><a href="../index.html " class="btn-square-slant ">トップページに戻る</a></p>
+            <p style="width:33%;"><a href="./note6.html " class="btn-square-slant ">次のページに移る→</a></p>
+        </div>
+
+        <br><br><br><br>
+    </div>
+
+
+
+</body>
+
+</html>}
