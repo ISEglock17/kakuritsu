@@ -134,11 +134,28 @@
 
         <div class="text">
             <p><u>正規分布表</u>$$\phi(z) = \int_0^z \frac{1}{\sqrt{2\pi }} e^{-\frac{x^2}{2}} dx$$とする。</p>
-            <p>$\;z\to \phi(z)\;$を求めるのが正規分布表I</p>
-            <p>$\;\phi(z)\to z\;$を求めるのが正規分布表II</p>
+            <p>$\;z\to \phi(z)\;$を求めるのが正規分布表I(教科書 p.159)</p>
+            <p>$\;\phi(z)\to z\;$を求めるのが正規分布表II(教科書 p.160)</p>
             <p><u>例</u> $\;\phi(1.76) = 0.4608\;$</p>
+            <p>　 $\;\phi(0.83) = 0.2967\;$</p>
+            <p>　 $\;\phi(z) = 0.397\;$となる$\;z\;$は，$\;z = 1.2646\;$</p>
+            <p>　 $\;\phi(z) = 0.232\;$となる$\;z\;$は，$\;z = 0.6189\;$</p>
         </div>
 
+        <div class="flex">
+            <div class="text">
+                <p><u>正規分布表による確率計算</u></p>
+                <p>$\;z\;$が$\;N(0,1)\;$に従うとき，$$P(0\leq Z\leq b) = \int_0^b \frac{1}{\sqrt{2\pi }} e^{-\frac{x^2}{2}}dx$$ $$P(a\leq Z\leq 0) = \int_a^0 \varphi(x) dx = \int_0^{-a} \varphi(x) dx = \phi(-a)$$</p>
+                <p>$\;a\lt 0 \lt b\;$ $$ \begin{align*}P(a \leq Z \leq b) &= \int_a^b \varphi(x)dx \\ &= \int_a^0 \varphi(x) dx + \int_0^b \varphi (x) dx \\ &= \phi(-a) + \phi(b) \end{align*}$$</p>
+                <p>$\;0 \lt a \lt b\;$ $$\begin{align*} P(a \leq Z \leq b) = \phi(b) - \phi(a)\end{align*}$$</p>
+                <p>$$P(0\leq Z) = \int_0^\infty \varphi (x) dx = \frac{1}{2}$$</p>
+            </div>
+            <div class="caption">
+                <br><br><br>
+                <img src="./images/image5-2.png" width="80%">
+                <img src="./images/image5-3.png" width="80%">
+            </div>
+        </div>
 
 
 
