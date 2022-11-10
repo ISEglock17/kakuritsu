@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)file:///C:/Users/ISE/Desktop/shindai%20programming%20language%20I%20homework%203-2.html -->
+<html lang="ja">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../notestyle.css">
+    <link rel="stylesheet" href="../button.css">
+    <title>確率・統計 ノート6</title>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" }}, tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\"] ], processEscapes: true }, "HTML-CSS": { matchFontHeight: false }, displayAlign: "left", displayIndent: "4em" });
+    </script>
+</head>
+
+<body>
+
+
+    <div class="document" id="top">
+        <h1><span>確率・統計 ノート6</span></h1>
+        <h2>リンク集</h2>
+        <div class="th" id="link">
+            <span class="th-t" style="width:10em;">
+                <h5>ページ構成(リンク)</h5>
+            </span>
+            <ul>
+                <li>
+                    <a href="#seiki">正規分布</a>
+                </li>
+                <li>
+                    <a href="douhi">同時確率分布</a>
+                </li>
+            </ul>
+        </div>
+
+        <h3 id="seiki">正規分布 続き</h3>
+
+        <div class="def">
+            <span class="def-t ">
+                <h4>例題11</h4>
+            </span>
+            <p>$X$が$\;N(2.10)\;$に従うとき，次の確率を正規分布表を用いて求めよ。</p>
+            <p>(1) $\;P(3\leq X \leq 4)\;$　(2) $\;P(0\lt X \lt 5)\;$　(3) $\;P(X\geq 6)\;$</p>
+        </div>
+
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>解答</h5>
+            </span>
+            <p>(1) $$\begin{align*}P(3\leq X \leq 4) &= P\left(\frac{3-2}{\sqrt 10}\leq Z \leq \frac{4-2}{\sqrt 10}\right) \\&= P(0.32 \leq Z \leq 0.63) \\ &= \phi(0.63) - \phi(0.32) \\&= 0.2357 - 0.1255 = 0.1102\end{align*}$$</p>
+        </div>
+
+        <div class="def">
+            <span class="def-t ">
+                <h4>例題12</h4>
+            </span>
+            <p>$\;X\;$が$\;N(5, 17)\;$に従うとき，次を満たす$\;k\;$の値を正規分布表を用いて求めよ。</p>
+            <p>(1) $\;P(X \leq k) = 0.585\;$　(2) $\;P(X\lt k) = 0.34\;$</p>
+        </div>
+
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>解答</h5>
+            </span>
+            <p>(1) $\;Z = \frac{X-5}{\sqrt17}\;$は$\;N(0, 1)\;$に従う。$$\begin{align*}0.585 &= P(X\leq k) = P\left(Z\leq \frac{k-5}{\sqrt17}\right) \\ &= P(Z\leq 0) + P(0\leq Z\leq \frac{k-5}{\sqrt17}) \end{align*}$$</p>
+            <p>$$\therefore P\left(0\leq Z \leq \frac{k-5}{\sqrt17} = 0.085 \qquad \therefore \frac{k-5}{\sqrt17} = 0.2147\right)$$ $$\therefore k=5.8852$$</p>
+        </div>
+
+        <div class="def">
+            <span class="def-t ">
+                <h4>問16</h4>
+            </span>
+            <p>次の確率を正規分布表を用いて求めよ。</p>
+            <p>(1) $\;X\;$が$\;N(3,20)\;$に従うときの$\;P(5\lt X\lt 10)\;$</p>
+            <p>(2) $\;X\;$が$\;N(5,30)\;$に従うときの$\;P(1\leq X\lt 4)\;$</p>
+            <p>(3) $\;X\;$が$\;N(7,40)\;$に従うときの$\;P(X\geq 5)\;$</p>
+        </div>
+
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>解答</h5>
+            </span>
+            <p>(1) $\;\displaystyle Z= \frac{X-3}{\sqrt20}\;$は正規分布$\;N(0,1)\;$に従う。</p>
+            <p>よって，$$\begin{align*} P(5\lt Z\lt 10) &= P\left(\frac{5-3}{\sqrt20}\lt Z \lt \frac{10-5}{\sqrt20} \right) \\ &=P(0.45 \lt Z\lt 1.57) \\ &= \phi(1.57) - \phi(0.45) \\&= 0.4418-0.1736 = 0.2682\end{align*}$$</p>
+        </div>
+
+        <div class="def">
+            <span class="def-t ">
+                <h4>問17</h4>
+            </span>
+            <p>正規分布表を用いて次を求めよ。</p>
+            <p>(1) $\;X\;$が$\;N(4,15)\;$に従うときの$\;P(X\leq k) = 0.4\;$を満たす$\;k\;$の値。</p>
+            <p>(2) $\;X\;$が$\;N(6,25)\;$に従うときの$\;P(X\gt k) = 0.8\;$を満たす$\;k\;$の値。</p>
+            <p>(3) $\;X\;$が$\;N(8,35)\;$に従うときの$\;P(|X-8|\leq k) = 0.5\;$を満たす$\;k\;$の値。</p>
+        </div>
+
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>解答</h5>
+            </span>
+            <p>$\;\displaystyle Z=\frac{X-4}{\sqrt15}\;$は$\;N(0,1)\;$に従う。</p>
+            <p>$$\begin{align*}0.4 &= P(X\leq k) = P\left(Z\leq \frac{k-4}{\sqrt15}\right)\end{align*}$$ $$\therefore 0.1 = P\left(\frac{k-4}{\sqrt15} \leq Z \leq 0\right) = P\left(0\leq Z\leq -\frac{k-4}{\sqrt15}\right)$$</p>
+            <p>$$\therefore -\frac{k-4}{\sqrt15} = 0.2533 \qquad \therefore k= 3.0190$$</p>
+        </div>
+
+        <div class="th ">
+            <span class="th-t ">
+                <h5>ラプラスの定理</h5>
+            </span>
+            <p>$\;X\;$が$\;B(n, p)\;$に従うとすると，定理8より$\;E(X) = np, V(X) = np(1-p)\;$であった。この標準化は$\;\displaystyle Z_n = \frac{X-np}{\sqrt{np(1-p)}}\;$である。</p>
+        </div>
+
+        <div class="th ">
+            <span class="th-t ">
+                <h5>定理11</h5>
+            </span>
+            <p>$\;Z_n\;$は$\;n\to \infty\;$とすると，$\;N(0,1)\;$に収束する。</p>
+            <p>$$\lim_{n\to \infty} P(a\leq Z_n \leq b) = P(a\leq Z\leq b)$$$\to \;n\;$が十分に大きいとき$\;(n\geq 50,\; np \geq 5)\;$，$\;a,b\in \mathbb{N}\;$に対し， $$\begin{align*}P(a\leq X\leq b) &= P\left(\frac{a-np}{\sqrt{np(1-p)}} \leq Z_n \leq \frac{b-np}{\sqrt{np(1-p)}}
+                \right) \\&\fallingdotseq P\left(\frac{a-0.5-np}{\sqrt{np(1-p)}} \leq Z \leq \frac{b+0.5-np}{\sqrt{np(1-p)}}\right) \end{align*}$$</p>
+            <p>※ 0.5が$\;a,b\;$のそれぞれに加えたり引かれたりしているが，これは補正項である。</p>
+        </div>
+
+        <div class="def">
+            <span class="def-t ">
+                <h4>例題14</h4>
+            </span>
+            <p>さいころを150回投げるとき，1の目が出る回数が30回以上35回以下である確率を二項分布の正規近似を用いて求めよ。</p>
+        </div>
+
+
+        <div class="ans">
+            <span class="ans-t">
+                <h5>解答</h5>
+            </span>
+            <p>$\displaystyle \;\;_{150}C_{30} \; \left(\frac{1}{6}\right)^{30} \cdot \left(\frac{5}{6}\right)^{120}\;$</p>
+            <p>$\;X\;$は$\displaystyle\;B\left(150, \frac{1}{6}\right)\;$に従うとする。</p>
+            <p>$$E(X) = np = 159 \cdot \frac{1}{6} = 25$$ $$V(X) = np(1-p) = 150\cdot \frac{1}{6} \cdot \frac{5}{6} = \frac{125}{6}$$</p>
+            <p>$$\begin{align*}P(30 \leq X\leq 35) &\fallingdotseq P\left(\frac{30-0.5-25}{\sqrt{\frac{125}{6}}} \leq Z \leq \frac{35 + 0.5 -25}{\sqrt{\frac{125}{6}}}\right) \\ &=P(0.99 \leq Z \leq 2.30) = 0.1504\end{align*}$$</p>
+        </div>
+
+
+        <p style="text-align:right;"><a href="#top" class="btn-square-slant ">↑トップに戻る</a></p>
+
+        <h3>同時確率分布</h3>
+        <div class="text" style="width:70%;">
+            <p>$\;X,Y\;$が離散型で，取りうる値がそれぞれ$\;x_i, y_j\quad (i = 1,\cdots ,m, j=1,\cdots ,n)$とする。このとき，$\;p_{ij} = P(X=x_i, y_j)\;$を$\;X\;$と$\;Y\;$の<em>同時確率</em>という。</p>
+            <p>$(x_i, y_j)\;$と$\;p_{ij}\;$の対応関係を<em>同時確率分布</em></p>
+            <p>また，$$\;p_{i\dot \;} = P(X = x_i) = \sum_{j=1}^n P(X = x_i, \; Y=y_j) = \sum_{j=1}^n p_{ij}\;$$ $$\;p_{j\dot \;} = P(X = y_j) = \sum_{i=1}^m P(X = x_{i \dot \;}, \; Y=y_j) = \sum_{i=1}^m p_{ij}\;$$</p>
+        </div>
+
+        <div class="flex">
+            <p style="width:33%;"><a href="./note5.html " class="btn-square-slant ">←前のページに戻る</a></p>
+            <p style="width:33%;"><a href="../index.html " class="btn-square-slant ">トップページに戻る</a></p>
+            <p style="width:33%;"><a href="./note7.html " class="btn-square-slant ">次のページに移る→</a></p>
+        </div>
+
+        <br><br><br><br>
+    </div>
+
+
+
+</body>
+
+</html>}
